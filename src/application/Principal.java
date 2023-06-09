@@ -1,15 +1,14 @@
 package application;
 
-import tabuleiro.posicao;
+import tabuleiro.tabuleiror;
 
 public class Principal {
 
 	public static void main(String[] args) {
 		
 
-		posicao pos = new posicao(3,5);
-		
-		System.out.println(pos);
+		tabuleiror tabuleiro = new tabuleiror(8, 8);
+	
 
 	}
 
