@@ -28,7 +28,7 @@ public class XadrezMatch {
 	
 	private void setupInicial() {
 		tabuleiro.colocarPeca(new Torre(tabuleiro, Color.WHITE), new posicao(2,1));
-		tabuleiro.colocarPeca(new Rei(tabuleiro, Color.BLACK), new posicao(0,4));
+		tabuleiro.colocarPeca(new Rei(tabuleiro, Color.BLACK), new posicao(0, 4));
 		tabuleiro.colocarPeca(new Rei(tabuleiro, Color.WHITE), new posicao(7,4) );
 	}
 
