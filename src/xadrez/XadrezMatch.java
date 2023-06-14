@@ -40,6 +40,10 @@ public class XadrezMatch {
 		if (!tabuleiro.issoEUmaPeca(posicao)) {
 			throw new XadrezException("Não tem nenhuma peça na posição de origem");
 		}
+		if (!tabuleiro.peca(posicao).ePossivelTerMovimento()) {
+			throw new XadrezException("Não existe movimentos possiveis para a peça escolhida");
+			
+		}
 	}
 	
 	private peca makeMove(posicao origem, posicao destino) {

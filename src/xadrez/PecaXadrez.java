@@ -3,7 +3,7 @@ package xadrez;
 import tabuleiro.peca;
 import tabuleiro.tabuleiror;
 
-public class PecaXadrez extends peca{
+public abstract class PecaXadrez extends peca{
 	
 	private Color color;
 
