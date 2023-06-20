@@ -1,6 +1,7 @@
 package xadrez;
 
 import tabuleiro.peca;
+import tabuleiro.posicao;
 import tabuleiro.tabuleiror;
 
 public abstract class PecaXadrez extends peca{
@@ -14,6 +15,11 @@ public abstract class PecaXadrez extends peca{
 
 	public Color getColor() {
 		return color;
+	}
+	
+	protected boolean temUmOponente(posicao posicao) {
+		PecaXadrez p = (PecaXadrez)getTabuleiro().peca(posicao);
+		return p != null && p.getColor() != color;
 	}
 
 
