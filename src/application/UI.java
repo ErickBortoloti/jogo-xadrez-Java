@@ -1,12 +1,16 @@
 package application;
 
+import java.nio.charset.CoderResult;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
 import xadrez.Color;
 import xadrez.PecaXadrez;
 import xadrez.PosicaoXadrez;
 import xadrez.XadrezMatch;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class UI {
 	
@@ -28,8 +32,10 @@ public class UI {
 		}
 	}
 	
-	public static void printMatch(XadrezMatch xadrezmatch) {
+	public static void printMatch(XadrezMatch xadrezmatch, List<PecaXadrez> capturadas) {
 		printTabuleiror(xadrezmatch.getPecas());
+		System.out.println();
+		printPecasCapturas(capturadas);
 		System.out.println();
 		System.out.println("Turno: " + xadrezmatch.getTurno());
 		System.out.println("Vez do jogador: " + xadrezmatch.getJogadorAtual());
@@ -81,6 +87,18 @@ public class UI {
 	
 		}
 	 System.out.print(" ");	
+	}
+	
+	private static void printPecasCapturas(List<PecaXadrez> capturadas) { //lista criada a partir das peças capturadas do jogo todo
+		List<PecaXadrez> brancas = capturadas.stream().filter(x -> x.getColor() == Color.BRANCO).collect(Collectors.toList()); //filtrar lista operacoes lambdas
+		List<PecaXadrez> pretas = capturadas.stream().filter(x -> x.getColor() == Color.PRETO).collect(Collectors.toList());
+		System.out.println("Peças capturadas: ");
+		System.out.print(consoleColors.WHITE_BACKGROUND + consoleColors.BLACK + "Brancas - ");
+		System.out.println(Arrays.toString(brancas.toArray())); // jeito padrao de imprimir arrays no java
+		System.out.println(consoleColors.RESET);
+		System.out.print(consoleColors.GREEN_BACKGROUND + consoleColors.BLACK + "Pretas - ");
+		System.out.println(Arrays.toString(pretas.toArray())); // jeito padrao de imprimir arrays no java
+		System.out.println(consoleColors.RESET);
 	}
 
 
