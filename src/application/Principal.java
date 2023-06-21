@@ -25,6 +25,9 @@ public class Principal {
 			System.out.print("Origem ");
 			PosicaoXadrez jogada = UI.lerPosicaoPeca(teclado);
 			
+			boolean[][] movimentosPossiveis = xadrezMatch.movimentosPossiveis(jogada);
+			UI.limparTela();
+			UI.printTabuleiror(xadrezMatch.getPecas(), movimentosPossiveis);
 			System.out.println();
 			System.out.print("Destino: ");
 			PosicaoXadrez destino = UI.lerPosicaoPeca(teclado);
