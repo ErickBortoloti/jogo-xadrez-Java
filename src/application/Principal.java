@@ -20,7 +20,7 @@ public class Principal {
 			
 			try {
 			UI.limparTela();
-			UI.printTabuleiror(xadrezMatch.getPecas());
+			UI.printMatch(xadrezMatch);
 			System.out.println();
 			System.out.print("Origem ");
 			PosicaoXadrez jogada = UI.lerPosicaoPeca(teclado);

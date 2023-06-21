@@ -3,6 +3,7 @@ package application;
 import xadrez.Color;
 import xadrez.PecaXadrez;
 import xadrez.PosicaoXadrez;
+import xadrez.XadrezMatch;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -25,6 +26,13 @@ public class UI {
 		catch (RuntimeException e) {
 			throw new InputMismatchException("Erro lendo as posições do Xadrez. Valores válidos de a1 até h8");
 		}
+	}
+	
+	public static void printMatch(XadrezMatch xadrezmatch) {
+		printTabuleiror(xadrezmatch.getPecas());
+		System.out.println();
+		System.out.println("Turno: " + xadrezmatch.getTurno());
+		System.out.println("Vez do jogador: " + xadrezmatch.getJogadorAtual());
 	}
 	
 	public static void printTabuleiror(PecaXadrez[][] pecas) {
@@ -64,7 +72,7 @@ public class UI {
 			System.out.print("-" + consoleColors.RESET);
 		}
 		else {
-			if (peca.getColor() == Color.WHITE) {
+			if (peca.getColor() == Color.BRANCO) {
 				System.out.print(consoleColors.WHITE + peca + consoleColors.RESET);
 			}
 			else {
