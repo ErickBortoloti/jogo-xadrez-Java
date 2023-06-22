@@ -39,6 +39,9 @@ public class UI {
 		System.out.println();
 		System.out.println("Turno: " + xadrezmatch.getTurno());
 		System.out.println("Vez do jogador: " + xadrezmatch.getJogadorAtual());
+		if (xadrezmatch.getCheck()) {
+			System.out.println(consoleColors.RED_BACKGROUND + consoleColors.WHITE + "CHECK!" + consoleColors.RESET);
+		}
 	}
 	
 	public static void printTabuleiror(PecaXadrez[][] pecas) {
