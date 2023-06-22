@@ -38,11 +38,20 @@ public class UI {
 		printPecasCapturas(capturadas);
 		System.out.println();
 		System.out.println("Turno: " + xadrezmatch.getTurno());
+		if (!xadrezmatch.getCheckMate()) {
 		System.out.println("Vez do jogador: " + xadrezmatch.getJogadorAtual());
 		if (xadrezmatch.getCheck()) {
 			System.out.println(consoleColors.RED_BACKGROUND + consoleColors.WHITE + "CHECK!" + consoleColors.RESET);
 		}
+		}
+		else {
+			System.out.println(consoleColors.RED_BACKGROUND + consoleColors.WHITE + "!! CHECKMATE !!" + consoleColors.RESET);
+			System.out.println("Vencedor: " + xadrezmatch.getJogadorAtual());
+			
+		}
 	}
+		
+		
 	
 	public static void printTabuleiror(PecaXadrez[][] pecas) {
 		

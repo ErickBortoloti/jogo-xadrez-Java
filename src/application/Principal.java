@@ -19,7 +19,7 @@ public class Principal {
 		XadrezMatch xadrezMatch = new XadrezMatch();
 		List<PecaXadrez> capturadas = new ArrayList<>();
 		
-		while (true) {
+		while (!xadrezMatch.getCheckMate()) {
 			
 			try {
 			UI.limparTela();
@@ -51,6 +51,9 @@ public class Principal {
 				teclado.nextLine();
 			}
 		}
+		
+		UI.limparTela();
+		UI.printMatch(xadrezMatch, capturadas);
 
 		
 	
