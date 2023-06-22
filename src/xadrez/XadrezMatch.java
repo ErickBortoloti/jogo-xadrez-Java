@@ -114,7 +114,8 @@ public class XadrezMatch {
 		
 	}
 	private peca makeMove(posicao origem, posicao destino) {
-		peca p = tabuleiro.removerPeca(origem);
+		PecaXadrez p = (PecaXadrez)tabuleiro.removerPeca(origem);
+		p.acrescentarContarMovimento();
 		peca pecaCapturada = tabuleiro.removerPeca(destino);
 		tabuleiro.colocarPeca(p, destino);
 		
@@ -126,7 +127,8 @@ public class XadrezMatch {
 	}
 	
 	private void desfazerMovimento(posicao origem, posicao destino, peca pecaCapturada) {
-		peca p = tabuleiro.removerPeca(destino);
+		PecaXadrez p = (PecaXadrez)tabuleiro.removerPeca(destino);
+		p.reduzirContarMovimentoi();
 		tabuleiro.colocarPeca(p, origem);
 		
 		if (pecaCapturada != null) {
