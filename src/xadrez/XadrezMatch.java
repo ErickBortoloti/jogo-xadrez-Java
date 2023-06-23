@@ -9,6 +9,7 @@ import application.consoleColors;
 import tabuleiro.peca;
 import tabuleiro.posicao;
 import tabuleiro.tabuleiror;
+import xadrez.pecas.Peao;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
 
@@ -200,12 +201,29 @@ public class XadrezMatch {
 	}
 	
 	private void setupInicial() {
-		colocarNovaPeca('h', 7, new Torre(tabuleiro, Color.BRANCO));
-		colocarNovaPeca('d', 1, new Torre(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('a', 1, new Torre(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('e', 1, new Rei(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('h', 1, new Torre(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('a', 2, new Peao(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('b', 2, new Peao(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('c', 2, new Peao(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('d', 2, new Peao(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('e', 2, new Peao(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('f', 2, new Peao(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('g', 2, new Peao(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('h', 2, new Peao(tabuleiro, Color.BRANCO));
 		
-		colocarNovaPeca('b', 8, new Torre(tabuleiro, Color.PRETO));
-		colocarNovaPeca('a', 8, new Rei(tabuleiro, Color.PRETO));
+		colocarNovaPeca('a', 8, new Torre(tabuleiro, Color.PRETO));
+		colocarNovaPeca('e', 8, new Rei(tabuleiro, Color.PRETO));
+		colocarNovaPeca('h', 8, new Torre(tabuleiro, Color.PRETO));
+		colocarNovaPeca('a', 7, new Peao(tabuleiro, Color.PRETO));
+		colocarNovaPeca('b', 7, new Peao(tabuleiro, Color.PRETO));
+		colocarNovaPeca('c', 7, new Peao(tabuleiro, Color.PRETO));
+		colocarNovaPeca('d', 7, new Peao(tabuleiro, Color.PRETO));
+		colocarNovaPeca('e', 7, new Peao(tabuleiro, Color.PRETO));
+		colocarNovaPeca('f', 7, new Peao(tabuleiro, Color.PRETO));
+		colocarNovaPeca('g', 7, new Peao(tabuleiro, Color.PRETO));
+		colocarNovaPeca('h', 7, new Peao(tabuleiro, Color.PRETO));
 	}
 
 }
