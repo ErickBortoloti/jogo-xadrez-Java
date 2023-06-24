@@ -38,6 +38,11 @@ public class UI {
 		printPecasCapturas(capturadas);
 		System.out.println();
 		System.out.println("Turno: " + xadrezmatch.getTurno());
+		
+
+		
+	
+
 		if (!xadrezmatch.getCheckMate()) {
 		System.out.println("Vez do jogador: " + xadrezmatch.getJogadorAtual());
 		if (xadrezmatch.getCheck()) {
@@ -111,6 +116,9 @@ public class UI {
 		System.out.print(consoleColors.GREEN_BACKGROUND + consoleColors.BLACK + "Pretas - ");
 		System.out.println(Arrays.toString(pretas.toArray())); // jeito padrao de imprimir arrays no java
 		System.out.println(consoleColors.RESET);
+		
+		
+
 	}
 
 

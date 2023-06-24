@@ -13,8 +13,7 @@ import xadrez.XadrezMatch;
 public class Principal {
 
 	public static void main(String[] args) {
-		
-		
+
 		Scanner teclado = new Scanner(System.in);
 		XadrezMatch xadrezMatch = new XadrezMatch();
 		List<PecaXadrez> capturadas = new ArrayList<>();
@@ -24,9 +23,11 @@ public class Principal {
 			try {
 			UI.limparTela();
 			UI.printMatch(xadrezMatch, capturadas);
+			xadrezMatch.mensagem();
 			System.out.println();
 			System.out.print("Origem ");
 			PosicaoXadrez jogada = UI.lerPosicaoPeca(teclado);
+		
 			
 			boolean[][] movimentosPossiveis = xadrezMatch.movimentosPossiveis(jogada);
 			UI.limparTela();
@@ -41,6 +42,7 @@ public class Principal {
 				capturadas.add(captura);
 			}
 			
+	
 			}
 			catch (XadrezException e) {
 				System.out.println(e.getMessage());

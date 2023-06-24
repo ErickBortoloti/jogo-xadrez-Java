@@ -12,6 +12,7 @@ import tabuleiro.tabuleiror;
 import xadrez.pecas.Bispo;
 import xadrez.pecas.Cavalo;
 import xadrez.pecas.Peao;
+import xadrez.pecas.Rainha;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
 
@@ -115,7 +116,10 @@ public class XadrezMatch {
 		turno++;
 		jogadorAtual = (jogadorAtual == Color.BRANCO) ? Color.PRETO : Color.BRANCO;
 		
-	}
+	
+		}
+		
+	
 	private peca makeMove(posicao origem, posicao destino) {
 		PecaXadrez p = (PecaXadrez)tabuleiro.removerPeca(origem);
 		p.acrescentarContarMovimento();
@@ -195,6 +199,15 @@ public class XadrezMatch {
 	
 	}
 	
+	public boolean mensagem() {
+		if(turno <= 2) {
+			System.out.println();
+			System.out.print(consoleColors.RED_BACKGROUND + consoleColors.YELLOW + "OBSERVAÇÃO:" + consoleColors.RESET);
+			System.out.print(consoleColors.RED_BACKGROUND + consoleColors.WHITE + " Q = Rainha!" + consoleColors.RESET);
+		}
+		return true;
+	}
+	
 	
 	private void colocarNovaPeca(char coluna, int linha, PecaXadrez peca) {
 		tabuleiro.colocarPeca(peca, new PosicaoXadrez(coluna, linha).toPosicao());
@@ -206,6 +219,7 @@ public class XadrezMatch {
 		colocarNovaPeca('a', 1, new Torre(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('b', 1, new Cavalo(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('c', 1, new Bispo(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('d', 1, new Rainha(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('e', 1, new Rei(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('f', 1, new Bispo(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('g', 1, new Cavalo(tabuleiro, Color.BRANCO));
@@ -222,6 +236,7 @@ public class XadrezMatch {
 		colocarNovaPeca('a', 8, new Torre(tabuleiro, Color.PRETO));
 		colocarNovaPeca('b', 8, new Cavalo(tabuleiro, Color.PRETO));
 		colocarNovaPeca('c', 8, new Bispo(tabuleiro, Color.PRETO));
+		colocarNovaPeca('d', 8, new Rainha(tabuleiro, Color.PRETO));
 		colocarNovaPeca('e', 8, new Rei(tabuleiro, Color.PRETO));
 		colocarNovaPeca('f', 8, new Bispo(tabuleiro, Color.PRETO));
 		colocarNovaPeca('g', 8, new Cavalo(tabuleiro, Color.PRETO));
