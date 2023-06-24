@@ -9,6 +9,8 @@ import application.consoleColors;
 import tabuleiro.peca;
 import tabuleiro.posicao;
 import tabuleiro.tabuleiror;
+import xadrez.pecas.Bispo;
+import xadrez.pecas.Cavalo;
 import xadrez.pecas.Peao;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
@@ -133,7 +135,7 @@ public class XadrezMatch {
 		tabuleiro.colocarPeca(p, origem);
 		
 		if (pecaCapturada != null) {
-			tabuleiro.colocarPeca(pecaCapturada, origem);
+			tabuleiro.colocarPeca(pecaCapturada, destino);
 			pecasCapturadas.remove(pecaCapturada);
 			pecasNoTabuleiro.add(pecaCapturada);
 		}
@@ -202,7 +204,11 @@ public class XadrezMatch {
 	
 	private void setupInicial() {
 		colocarNovaPeca('a', 1, new Torre(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('b', 1, new Cavalo(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('c', 1, new Bispo(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('e', 1, new Rei(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('f', 1, new Bispo(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('g', 1, new Cavalo(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('h', 1, new Torre(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('a', 2, new Peao(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('b', 2, new Peao(tabuleiro, Color.BRANCO));
@@ -214,7 +220,11 @@ public class XadrezMatch {
 		colocarNovaPeca('h', 2, new Peao(tabuleiro, Color.BRANCO));
 		
 		colocarNovaPeca('a', 8, new Torre(tabuleiro, Color.PRETO));
+		colocarNovaPeca('b', 8, new Cavalo(tabuleiro, Color.PRETO));
+		colocarNovaPeca('c', 8, new Bispo(tabuleiro, Color.PRETO));
 		colocarNovaPeca('e', 8, new Rei(tabuleiro, Color.PRETO));
+		colocarNovaPeca('f', 8, new Bispo(tabuleiro, Color.PRETO));
+		colocarNovaPeca('g', 8, new Cavalo(tabuleiro, Color.PRETO));
 		colocarNovaPeca('h', 8, new Torre(tabuleiro, Color.PRETO));
 		colocarNovaPeca('a', 7, new Peao(tabuleiro, Color.PRETO));
 		colocarNovaPeca('b', 7, new Peao(tabuleiro, Color.PRETO));
