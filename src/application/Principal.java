@@ -1,5 +1,6 @@
 package application;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -43,9 +44,14 @@ public class Principal {
 			}
 			
 			if (xadrezMatch.getEvolucao() != null) {
-				System.out.println("QUal vai ser a evoluçaõ da sua peça? (B/C/Q/T)");
+				System.out.println("QUal vai ser a evolução da sua peça? (B/C/Q/T)");
 				System.out.println(consoleColors.RED_BACKGROUND + consoleColors.WHITE + "Lembrando: B = Bispo, C = Cavalo, Q = Rainha & T = Torre" + consoleColors.RESET);
 				String type = teclado.next().toUpperCase();
+				while (!type.equals("B") && !type.equals("C") && !type.equals("T") && !type.equals("Q")) {
+					System.out.println(consoleColors.RED_BACKGROUND + consoleColors.WHITE + "!!VALOR INVÁLIDO!!" + consoleColors.RESET 
+							+ "\nDigite um valor correto para a evolução da sua peça (B/C/Q/T)");
+					type = teclado.next().toUpperCase();
+				}
 				xadrezMatch.recolarPecaEvoluida(type);
 			}
 			

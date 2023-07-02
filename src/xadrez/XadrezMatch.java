@@ -1,7 +1,7 @@
 package xadrez;
 
 
-import java.security.InvalidParameterException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -134,7 +134,7 @@ public class XadrezMatch {
 			throw new IllegalStateException("Sem peça para ser evoluida");
 		}
 		if (!type.equals("B") && !type.equals("C") && !type.equals("T") && !type.equals("Q")) {
-			throw new InvalidParameterException("Tipo inválido para a mudança");
+			return evolucao;
 		}
 		posicao pos = evolucao.getPosicaoXadrez().toPosicao();
 		peca p = tabuleiro.removerPeca(pos);
