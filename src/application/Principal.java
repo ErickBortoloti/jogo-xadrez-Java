@@ -42,6 +42,13 @@ public class Principal {
 				capturadas.add(captura);
 			}
 			
+			if (xadrezMatch.getEvolucao() != null) {
+				System.out.println("QUal vai ser a evoluçaõ da sua peça? (B/C/Q/T)");
+				System.out.println(consoleColors.RED_BACKGROUND + consoleColors.WHITE + "Lembrando: B = Bispo, C = Cavalo, Q = Rainha & T = Torre" + consoleColors.RESET);
+				String type = teclado.next().toUpperCase();
+				xadrezMatch.recolarPecaEvoluida(type);
+			}
+			
 	
 			}
 			catch (XadrezException e) {
